@@ -78,6 +78,7 @@
           break;
         case ')': // optional name next
           tree = ancestors.pop();
+          tree.length = 1.0;
           break;
         case ':': // optional length next
           break;
