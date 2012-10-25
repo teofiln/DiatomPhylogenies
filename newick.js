@@ -91,6 +91,7 @@
           }
       }
     }
+    tree.length = 0.0;
     return tree;
   };
 })(
