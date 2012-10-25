@@ -55,6 +55,13 @@
                 display_phylogram(tree);
              });
           });
+          Path.map("#/r/:name").to(function() {
+             var filename = this.params['name'];
+             $.ajax("trees/" + filename).done(function(data) {
+                var tree = parse_and_build_tree(data);
+                display_radial(tree);
+             });
+          });
 
           $.ajax("trees/index.list").done(function(data) {
              var names = data.split(/\n+/);
