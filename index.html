@@ -42,7 +42,7 @@
       $(function () {
         Path.map("#/:name").to(function() {
           var filename = this.params['name'];
-          jQuery.ajax("trees/" + filename).done(function(data) {
+          $.ajax("trees/" + filename).done(function(data) {
              var tree = parse_and_build_tree(data);
              display_phylogram(tree);
           });
@@ -59,10 +59,6 @@
   <body>
      <h2>Phylogram</h2>
      <div id='phylogram'></div>
-     <div id='list'>
-        <ul>
-           <li><a href='#/example1.txt'>example1</a>
-           <li><a href='#/example2.txt'>example2</a>
-     </div>
+     <div id='list'><ul></ul></div>
   </body>
 </html>
