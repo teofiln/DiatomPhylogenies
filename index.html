@@ -26,7 +26,7 @@
 
        function display_radial(newick) {
           d3.select("#phylogram svg").remove();
-          d3.phylogram.buildRadial('#radialtree', newick, {
+          d3.phylogram.buildRadial('#phylogram', newick, {
              width: 400,
              skipLabels: true
           })
@@ -39,37 +39,37 @@
           });
        }
 
-       function add_tree_in_list(name) {
-          $('#list ul').append(
-          $('<li>').append(
-          $('<a>').attr('href', '#/' + name + '.txt').append(
-             name
-             )
-             )
-             );
-          }
+       function make_tree_link(name) {
+          var a = $('<a>');
+          a.attr('href', '#/' + name + '.txt');
+          a.text(name);
+          var li = $('<li>').append(a);
+          return li;
+       }
 
-          $(function () {
-             Path.map("#/:name").to(function() {
-                var filename = this.params['name'];
-                $.ajax("trees/" + filename).done(function(data) {
-                   var tree = parse_and_build_tree(data);
-                   display_phylogram(tree);
-                });
+       $(function () {
+          Path.map("#/:name").to(function() {
+             var filename = this.params['name'];
+             $.ajax("trees/" + filename).done(function(data) {
+                var tree = parse_and_build_tree(data);
+                display_phylogram(tree);
              });
-
-             $.ajax("trees/index.list").done(function(data) {
-                var names = data.split(/\n+/);
-                for (var i=0; i < names.length; i++) {
-                   var name = names[i];
-                   if (! name.match(/^\s*$/)) {
-                      add_tree_in_list(name);
-                   }
-                }
-             });
-
-             Path.listen();
           });
+
+          $.ajax("trees/index.list").done(function(data) {
+             var names = data.split(/\n+/);
+             var links = [];
+             for (var i=0; i < names.length; i++) {
+                var name = names[i];
+                if (! name.match(/^\s*$/)) {
+                   links.push(make_tree_link(name));
+                }
+             }
+             $('#list ul').append(links);
+          });
+
+          Path.listen();
+       });
 
     </script>
     <style type="text/css" media="screen">
