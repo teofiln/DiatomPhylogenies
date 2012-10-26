@@ -13,6 +13,8 @@ Each tree is represented by the following:
 
 1) newick format phylogenetic tree (can be downloaded and opened in any tree viewing software e.g. FigTree, TreeView, Mesquite, Seaview)
 
+todo: create downloadable image+download source newick file
+
 2) doi of the publication where this tree comes from (if available).
 
 3) TreeBase or Dryad study ID of the publication where nexus files of the tree and data can be found (if available)
