@@ -11,7 +11,7 @@ This is a web space intended to store published phylogenies of diatoms. The repo
 
 Each tree is represented by the following:
 
-1) the phylogenetic tree displayed in the wonderful OneZoom Tree of Life Exlorer format (see http://www.onezoom.org/)
+1) the phylogenetic tree displayed in the wonderful OneZoom Tree of Life Explorer format (see http://www.onezoom.org/)
 
 2) doi or link of the publication where this tree comes from (if available).
 
