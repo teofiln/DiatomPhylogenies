@@ -1,0 +1,13 @@
+1) Fix names in species in trees where needed!
+
+2) Add trees from (to start with). Some of these are not ultrametric so transform to relative time first:
+Theriot et al. 2010 (and others)
+Ashworth et al. 2013 (and others)
+Sorhannus 2007
+Brown and Sorhannus 2010
+Sato (various)
+Medlin (various)
+Alverson et al. 2007
+Ruck and Theriot 2011
+
+
